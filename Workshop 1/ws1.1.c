@@ -14,13 +14,13 @@ int main(){
     printf("\nEnter x: ");
     scanf("%f", &x);
     
-    S1 = a*a*x + b*x + c;
+    S1 = a*x*x + b*x + c;
     S2 = sqrt(b*b - 4*a*c);
     
     if ((b*b - 4*a*c) > 0){
-        printf("S1 = %0.2f, S2 = %0.2f", S1, S2);
+        printf("S1 = %0.2lf, S2 = %0.2lf", S1, S2);
     } else {
-        printf("S1 = %0.2f, S2 = 0,00", S1);
+        printf("S1 = %0.2lf, S2 = 0.00", S1);
     }
     
     return 0;
