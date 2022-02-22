@@ -3,25 +3,26 @@
 #include <time.h>
 
 void FunctionToss(){
-	int number, tosses;
-	printf("Enter number of tosses: ");
+	int number, tosses, head = 0, tail = 0;
+	printf("Number of tosses: ");
 	scanf("%d",&number);
-	srand(time(NULL));
-	tosses=1+rand()%number;
-	printf("Number of heads: %d", tosses);
-	printf("\nNumber of tails:\t %d", number-tosses);
+	//srand(time(NULL));
+	for (int i = 1; i <= number; i++){
+		//tosses=1+rand()%number;
+		if (rand()%2 == 1){
+			head++;
+		} else {
+			tail++;
+		}
+	}
+	printf("Number of heads: %d", head);
+	printf("\nNumber of tails:\t %d", tail);
 	float percen=(float)tosses/number*100;
-	printf("\npercentage of heads for all tosses: %.2f", percen);
+	printf("\nPercentage of heads for all tosses: %.2f", percen);
 }
 
 int main(){
 	int check;
-	do{
-		printf("Select options:\n1. Start tossing\n2. Exit\n");
-		scanf("%d",&check);
-	}while(check!=1&&check!=2);
-	if(check==1) FunctionToss();
-	if(check==2) return 0;
-
-	
+	FunctionToss();
+	return 0;
 }
