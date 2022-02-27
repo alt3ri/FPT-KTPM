@@ -1,36 +1,23 @@
-#include <stdio.h>
+#include<stdio.h>
+#include<string.h>
 
-void reverse(){
-	char ch;
-	char a[256];
-	int n=0,i,word=0;
-
-	printf("Enter string ended by . : ");
-
-	do {
-	a[n]=getchar();
-	}
-
-	while(a[n++]!='.');
-	printf("The original string: ");
-	for(i=0; i<n-1;i++){
-		putchar(a[i]);
-	}
-
-	printf("\nThe reverse string: ");
-	for(i=0; i<n;i++){
-		putchar(a[n-i-2]);
-	}
+void revstr(char*str1){
+    int i,len,temp;
+    len=strlen(str1);
+    
+    for (i=0;i<len/2;i++){
+        temp =str1[i];
+        str1[i]=str1[len-i-1];
+        str1[len-i-1]=temp;
+    }
 }
 
 int main(){
-	char check;
-
-	do{
-		reverse();
-		printf("\n\nAnother run (y/n)? ");
-		scanf("%s",&check);
-		if(check=='n')	return 0;
-	}
-	while(check=='y');
+    char str[20];
+    
+    scanf("%s",str);
+    printf("The original string: %s",str);
+    revstr(str);
+    printf("\nThe reverse string: %s",str);
+    return 0;
 }
