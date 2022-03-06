@@ -86,7 +86,6 @@ int main(){
 	
 	int selection;
 	do{
-		system("cls");
 		printf("Choose one of the following options:\n");
 		printf("1. Input a string\n");
 		printf("2. Split a string into words\n");
