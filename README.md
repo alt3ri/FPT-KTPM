@@ -1,3 +1,3 @@
 # CSD201
 
-Lecturers: AnNT
+Lecturer: AnNT
